@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio Button Quiz</title>
+    <style>
+        .result {
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<style>
+body{background-color:darkblue}
+h1{color:orange}
+li{color:yellow}</style>
+</head><body>
+<img src="steph.JPG" width="60%">
+<marquee><u><h1>THE GOAT</h1></u></marquee><list-style-type: none>
+<li>On the court where the players did strive,</li>
+<li>A basketball star rose to thrive</li>
+<li>He shot with great aim,</li>
+<li>And a swish was his claim</li>
+<li>And his skills were a wonder alive</li><br><br>
+<li>How good is he?</li>
+
+    <h2>Select the correct answer</h2>
+    <form id="quizForm">
+        <label>
+            <input type="radio" name="answer" value="He is GOATed"> He is GOATed
+        </label><br><br>
+        <label>
+            <input type="radio" name="answer" value="He is really bad"> He is really bad
+</label><br><br>
+        <button type="button" onclick="checkAnswer()">Submit</button>
+    </form>
+
+    <div id="result" class="result"></div>
+
+    <script>
+        function checkAnswer() {
+            // Get the selected radio button value
+            const selectedAnswer = document.querySelector('input[name="answer"]:checked');
+            const resultDiv = document.getElementById("result");
+
+            // If no answer is selected
+            if (!selectedAnswer) {
+                resultDiv.textContent = "Please select an answer!";
+                return;
+            }
+
+            // Check if the selected answer is correct
+            if (selectedAnswer.value === "He is GOATed") {
+                resultDiv.textContent = "Correct Answer!";
+                resultDiv.style.color = "green";
+            } else {
+                resultDiv.textContent = "Sorry to hear you're going through that. I mean, thinking Steph Curry is bad? That's a tough spot to be in.I can only imagine the kind of basketball trauma you must have experienced to think that a two-time NBA champion and two-time NBA MVP is 'bad'. My condolences, really.But hey, everyone's entitled to their opinion, no matter how... misinformed. Maybe we can watch some of his games together and, you know, enlighten you?";
+                resultDiv.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
